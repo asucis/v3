@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: local@git
 media_folder: static/assets
 public_folder: assets
   - name: "site-information"

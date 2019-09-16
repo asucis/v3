@@ -5,7 +5,7 @@ module.exports = {
     author: `@dickwyn`,
   },
   plugins: [
-    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-netlify-cmsss`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

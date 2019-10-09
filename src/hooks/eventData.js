@@ -1,17 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 
 const getEventData = () => {
-  const {
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: {
-              frontmatter: { date, description, photo, title },
-          },
-        },
-      ],
-    },
-  } = useStaticQuery(graphql`
+  const eventData = useStaticQuery(graphql`
     query eventDataQuery {
       allMarkdownRemark(filter: {fileAbsolutePath: {regex: "\\/event/"}}) {
         edges {
@@ -27,13 +17,9 @@ const getEventData = () => {
       }
     }
   `);
-
-  return {
-    date,
-    description,
-    photo,
-    title,
-  };
+  
+  if (!eventData) return null;
+  return eventData;
 };
 
 export default getEventData;

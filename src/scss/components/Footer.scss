@@ -10,6 +10,18 @@ footer {
     .section-one {
       grid-area: section-one;
 
+      display: grid;
+      grid-template-columns: 10rem 1fr;
+      grid-template-areas: "left-section right-section";
+
+      .left-section {
+        grid-area: left-section;
+      }
+
+      .right-section {
+        grid-area: right-section;
+      }
+
       .social-link {
         display: inline-block;
       }
@@ -21,6 +33,25 @@ footer {
 
     .section-three {
       grid-area: section-three;
+    }
+
+    // Styles for tablet view
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+
+      grid-template-areas:
+        "section-one section-one"
+        "section-two section-three";
+    }
+
+    // Styles for phone view
+    @media (max-width: 435px) {
+      grid-template-columns: 1fr;
+
+      grid-template-areas:
+        "section-one"
+        "section-two"
+        "section-three";
     }
   }
 

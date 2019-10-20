@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
+import Image from "./image";
 
 const Footer = () => {
   const date = new Date();
@@ -13,19 +14,27 @@ const Footer = () => {
     { id: 6, name: "link6", url: "https://www.google.com" },
   ];
 
+  const addressLine1 = "RM 225J, Student Pavilion,";
+  const addressLine2 = "400 E Orange St,";
+  const addressLine3 = "Tempe, Arizona 85281.";
+
   return (
     <footer>
       <div className="footer-top">
         <div className="section-one">
-          <p>LOGO</p>
-          <p>Coalition of International Students</p>
-          <div className="social-link">Social</div>
-          <div className="social-link">Social</div>
-          <div className="social-link">Social</div>
-          <div className="social-link">Social</div>
-          <p>RM 225J, Student Pavilion,</p>
-          <p>400 E Orange St,</p>
-          <p>Tempe, Arizona 85281.</p>
+          <div className="left-section">
+            <Image />
+          </div>
+          <div className="right-section">
+            <p>Coalition of International Students</p>
+            <div className="social-link">Social</div>
+            <div className="social-link">Social</div>
+            <div className="social-link">Social</div>
+            <div className="social-link">Social</div>
+            <p>{addressLine1}</p>
+            <p>{addressLine2}</p>
+            <p>{addressLine3}</p>
+          </div>
         </div>
         <div className="section-two">
           <h1>Section title</h1>

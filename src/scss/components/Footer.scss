@@ -1,5 +1,39 @@
 footer {
   grid-area: footer;
-  background-color: $light-primary;
-  padding: 1.45rem 1.0875rem;
+  background-color: $divider;
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-areas: "section-one section-two section-three";
+
+    .section-one {
+      grid-area: section-one;
+
+      .social-link {
+        display: inline-block;
+      }
+    }
+
+    .section-two {
+      grid-area: section-two;
+    }
+
+    .section-three {
+      grid-area: section-three;
+    }
+  }
+
+  .footer-bottom {
+    background-color: $black;
+    color: $white;
+
+    p {
+      margin: 0;
+    }
+
+    & > p > a {
+      display: inline-block;
+    }
+  }
 }

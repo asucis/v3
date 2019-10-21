@@ -1,6 +1,11 @@
 import React from "react";
 import { Link } from "gatsby";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
 import Image from "./image";
+
+library.add(fab);
 
 const Footer = () => {
   const date = new Date();
@@ -28,17 +33,55 @@ const Footer = () => {
             </div>
             <div className="right-section">
               <p className="name">Coalition of International Students</p>
-              <div className="social-link">Social</div>
-              <div className="social-link">Social</div>
-              <div className="social-link">Social</div>
-              <div className="social-link">Social</div>
+              <div className="social-icon-container">
+                <div className="social-icon">
+                  <a
+                    href="https://facebook.com/asucis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={["fab", "facebook-f"]} />
+                  </a>
+                </div>
+                <div className="social-icon">
+                  <a
+                    href="https://twitter.com/asu_cis"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={["fab", "twitter"]} />
+                  </a>
+                </div>
+                <div className="social-icon">
+                  <a
+                    href="https://www.instagram.com/asucis/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FontAwesomeIcon icon={["fab", "instagram"]} />
+                  </a>
+                </div>
+                <div className="social-icon">
+                  <a href="/weixin" target="_blank" rel="noopener noreferrer">
+                    <FontAwesomeIcon icon={["fab", "weixin"]} />
+                  </a>
+                </div>
+              </div>
               <p className="address">{addressLine1}</p>
               <p className="address">{addressLine2}</p>
               <p className="address">{addressLine3}</p>
+
+              <a
+                href="https://goo.gl/maps/RMmsoVy7nE6E8AEG7"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit us
+              </a>
             </div>
           </div>
           <div className="section-two">
-            <h1>ASUCIS</h1>
+            <h1>Explore</h1>
             {links.map(link => (
               <Link key={link.id} to={link.url}>
                 {link.name}
@@ -60,7 +103,7 @@ const Footer = () => {
           <div className="left-section">
             <p>
               Arizona State University © Coalition of International Students{" "}
-              {date.getFullYear()}. All rights reserved
+              {date.getFullYear()}. All rights reserved.
             </p>
           </div>
           <div className="right-section">
@@ -81,6 +124,7 @@ const Footer = () => {
               >
                 MIT License
               </a>
+              .
             </p>
           </div>
         </div>

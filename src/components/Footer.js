@@ -6,12 +6,12 @@ const Footer = () => {
   const date = new Date();
 
   const links = [
-    { id: 1, name: "link1", url: "https://www.google.com" },
-    { id: 2, name: "link2", url: "https://www.google.com" },
-    { id: 3, name: "link3", url: "https://www.google.com" },
-    { id: 4, name: "link4", url: "https://www.google.com" },
-    { id: 5, name: "link5", url: "https://www.google.com" },
-    { id: 6, name: "link6", url: "https://www.google.com" },
+    { id: 1, name: "Home", url: "https://www.google.com" },
+    { id: 2, name: "Research", url: "https://www.google.com" },
+    { id: 3, name: "Our Partners", url: "https://www.google.com" },
+    { id: 4, name: "News/Events", url: "https://www.google.com" },
+    { id: 5, name: "Our Mission", url: "https://www.google.com" },
+    { id: 6, name: "F-1 OPT", url: "https://www.google.com" },
   ];
 
   const addressLine1 = "RM 225J, Student Pavilion,";
@@ -27,18 +27,18 @@ const Footer = () => {
               <Image />
             </div>
             <div className="right-section">
-              <p>Coalition of International Students</p>
+              <p className="name">Coalition of International Students</p>
               <div className="social-link">Social</div>
               <div className="social-link">Social</div>
               <div className="social-link">Social</div>
               <div className="social-link">Social</div>
-              <p>{addressLine1}</p>
-              <p>{addressLine2}</p>
-              <p>{addressLine3}</p>
+              <p className="address">{addressLine1}</p>
+              <p className="address">{addressLine2}</p>
+              <p className="address">{addressLine3}</p>
             </div>
           </div>
           <div className="section-two">
-            <h1>Section title</h1>
+            <h1>ASUCIS</h1>
             {links.map(link => (
               <Link key={link.id} to={link.url}>
                 {link.name}
@@ -46,8 +46,8 @@ const Footer = () => {
             ))}
           </div>
           <div className="section-three">
-            <h1>Section title</h1>
-            {links.map(link => (
+            <h1>Resources</h1>
+            {links.reverse().map(link => (
               <a key={link.id} href={link.url}>
                 {link.name}
               </a>

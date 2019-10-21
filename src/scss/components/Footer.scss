@@ -11,11 +11,38 @@ footer {
   }
 
   .footer-top-container {
+    padding: 0 0.5rem;
+
     .footer-top {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       grid-template-areas: "section-one section-two section-three";
       justify-content: center;
+
+      h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.5rem;
+      }
+
+      a {
+        transition: all 0.25s ease-in-out;
+        text-decoration: none;
+        border-bottom: 1px dashed $divider;
+        width: fit-content;
+        text-overflow: ellipsis;
+        line-height: 1.5;
+        font-size: 18px;
+        color: $black;
+
+        &:hover {
+          color: $accent;
+          border-bottom: 2px dashed $accent;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 0.75rem;
+        }
+      }
 
       .section-one {
         grid-area: section-one;
@@ -23,6 +50,7 @@ footer {
         display: grid;
         grid-template-columns: 10rem 1fr;
         grid-template-areas: "left-section right-section";
+        grid-gap: 1rem;
 
         .left-section {
           grid-area: left-section;
@@ -30,6 +58,15 @@ footer {
 
         .right-section {
           grid-area: right-section;
+
+          .name,
+          .address {
+            margin: 0 0 1rem;
+          }
+
+          .name {
+            font-size: 1.5rem;
+          }
         }
 
         .social-link {
@@ -47,26 +84,41 @@ footer {
 
       // Styles for tablet view
       @media (max-width: 768px) {
-        grid-template-columns: repeat(2, 1fr);
-
-        grid-template-areas:
+        grid-template:
           "section-one section-one"
-          "section-two section-three";
+          "section-two section-three" 1fr / 1fr 1fr;
+        grid-gap: 3rem;
+
+        .section-one,
+        .section-two,
+        .section-three {
+          justify-self: center;
+        }
       }
 
       // Styles for phone view
       @media (max-width: 435px) {
-        grid-template-columns: 1fr;
+        .section-one {
+          grid-template: "left-section" "right-section" 1fr;
 
-        grid-template-areas:
-          "section-one"
-          "section-two"
-          "section-three";
+          .left-section {
+            .gatsby-image-wrapper {
+              margin: 0 auto;
+              height: 5rem;
+              width: 5rem;
+            }
+          }
+
+          .right-section {
+            text-align: center;
+          }
+        }
       }
     }
   }
 
   .footer-bottom-container {
+    padding: 0 0.5rem;
     .footer-bottom {
       display: grid;
       grid-template: "left-section right-section" 1fr;
@@ -74,6 +126,7 @@ footer {
       p {
         margin: 0;
         font-size: 0.75rem;
+        color: $divider;
       }
 
       .left-section {
@@ -93,6 +146,12 @@ footer {
         grid-template: "left-section" "right-section" 1fr;
         justify-content: center;
         grid-gap: 1rem;
+        text-align: center;
+
+        .left-section,
+        .right-section {
+          justify-self: center;
+        }
       }
     }
   }

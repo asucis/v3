@@ -20,62 +20,70 @@ const Footer = () => {
 
   return (
     <footer>
-      <div className="footer-top">
-        <div className="section-one">
-          <div className="left-section">
-            <Image />
+      <div className="footer-top-container">
+        <div className="footer-top">
+          <div className="section-one">
+            <div className="left-section">
+              <Image />
+            </div>
+            <div className="right-section">
+              <p>Coalition of International Students</p>
+              <div className="social-link">Social</div>
+              <div className="social-link">Social</div>
+              <div className="social-link">Social</div>
+              <div className="social-link">Social</div>
+              <p>{addressLine1}</p>
+              <p>{addressLine2}</p>
+              <p>{addressLine3}</p>
+            </div>
           </div>
-          <div className="right-section">
-            <p>Coalition of International Students</p>
-            <div className="social-link">Social</div>
-            <div className="social-link">Social</div>
-            <div className="social-link">Social</div>
-            <div className="social-link">Social</div>
-            <p>{addressLine1}</p>
-            <p>{addressLine2}</p>
-            <p>{addressLine3}</p>
+          <div className="section-two">
+            <h1>Section title</h1>
+            {links.map(link => (
+              <Link key={link.id} to={link.url}>
+                {link.name}
+              </Link>
+            ))}
           </div>
-        </div>
-        <div className="section-two">
-          <h1>Section title</h1>
-          {links.map(link => (
-            <Link key={link.id} to={link.url}>
-              {link.name}
-            </Link>
-          ))}
-        </div>
-        <div className="section-three">
-          <h1>Section title</h1>
-          {links.map(link => (
-            <a key={link.id} href={link.url}>
-              {link.name}
-            </a>
-          ))}
+          <div className="section-three">
+            <h1>Section title</h1>
+            {links.map(link => (
+              <a key={link.id} href={link.url}>
+                {link.name}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="footer-bottom">
-        <p>
-          Arizona State University © Coalition of International Students{" "}
-          {date.getFullYear()}. All rights reserved
-        </p>
-        <p>
-          Built by{" "}
-          <a
-            href="https://www.dickwyn.xyz"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            dickwyn
-          </a>{" "}
-          and the collaborators. This code is available under the{" "}
-          <a
-            href="https://github.com/asucis/v3/blob/dev/LICENSE"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            MIT License
-          </a>
-        </p>
+      <div className="footer-bottom-container">
+        <div className="footer-bottom">
+          <div className="left-section">
+            <p>
+              Arizona State University © Coalition of International Students{" "}
+              {date.getFullYear()}. All rights reserved
+            </p>
+          </div>
+          <div className="right-section">
+            <p>
+              Built by{" "}
+              <a
+                href="https://www.dickwyn.xyz"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                dickwyn
+              </a>{" "}
+              and the collaborators. This code is available under the{" "}
+              <a
+                href="https://github.com/asucis/v3/blob/dev/LICENSE"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                MIT License
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );

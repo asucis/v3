@@ -1,18 +1,80 @@
 footer {
   grid-area: footer;
-  background-color: $divider;
+  background-color: whitesmoke;
 
-  .footer-top {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    grid-template-areas: "section-one section-two section-three";
+  /** This limits the max width of the content */
+  .footer-top,
+  .footer-bottom {
+    width: 100%;
+    max-width: 1280px;
+    margin: 88px auto;
+  }
 
-    .section-one {
-      grid-area: section-one;
-
+  .footer-top-container {
+    .footer-top {
       display: grid;
-      grid-template-columns: 10rem 1fr;
-      grid-template-areas: "left-section right-section";
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas: "section-one section-two section-three";
+      justify-content: center;
+
+      .section-one {
+        grid-area: section-one;
+
+        display: grid;
+        grid-template-columns: 10rem 1fr;
+        grid-template-areas: "left-section right-section";
+
+        .left-section {
+          grid-area: left-section;
+        }
+
+        .right-section {
+          grid-area: right-section;
+        }
+
+        .social-link {
+          display: inline-block;
+        }
+      }
+
+      .section-two {
+        grid-area: section-two;
+      }
+
+      .section-three {
+        grid-area: section-three;
+      }
+
+      // Styles for tablet view
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-areas:
+          "section-one section-one"
+          "section-two section-three";
+      }
+
+      // Styles for phone view
+      @media (max-width: 435px) {
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+          "section-one"
+          "section-two"
+          "section-three";
+      }
+    }
+  }
+
+  .footer-bottom-container {
+    .footer-bottom {
+      display: grid;
+      grid-template: "left-section right-section" 1fr;
+
+      p {
+        margin: 0;
+        font-size: 0.75rem;
+      }
 
       .left-section {
         grid-area: left-section;
@@ -20,51 +82,18 @@ footer {
 
       .right-section {
         grid-area: right-section;
+        justify-self: flex-end;
+        & > p > a {
+          display: inline-block;
+        }
       }
 
-      .social-link {
-        display: inline-block;
+      // Styles for tablet view
+      @media (max-width: 1280px) {
+        grid-template: "left-section" "right-section" 1fr;
+        justify-content: center;
+        grid-gap: 1rem;
       }
-    }
-
-    .section-two {
-      grid-area: section-two;
-    }
-
-    .section-three {
-      grid-area: section-three;
-    }
-
-    // Styles for tablet view
-    @media (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-
-      grid-template-areas:
-        "section-one section-one"
-        "section-two section-three";
-    }
-
-    // Styles for phone view
-    @media (max-width: 435px) {
-      grid-template-columns: 1fr;
-
-      grid-template-areas:
-        "section-one"
-        "section-two"
-        "section-three";
-    }
-  }
-
-  .footer-bottom {
-    background-color: $black;
-    color: $white;
-
-    p {
-      margin: 0;
-    }
-
-    & > p > a {
-      display: inline-block;
     }
   }
 }

@@ -56,8 +56,7 @@ footer {
         justify-self: flex-start;
 
         display: grid;
-        grid-template-columns: 10rem 1fr;
-        grid-template-areas: "left-section right-section";
+        grid-template: "left-section right-section" 1fr / 10rem 1fr;
         grid-gap: 2rem;
 
         .left-section {

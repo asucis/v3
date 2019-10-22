@@ -24,12 +24,9 @@ class Contact extends Component {
             <div className="contact-information">
               <h1>Need a hand? We&apos;re here to help</h1>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-                sagittis faucibus ex, nec interdum elit tincidunt a. Proin eget
-                varius mauris. Duis in pretium nisi, quis consectetur felis.
-                Nullam tristique lacus quis egestas gravida. Cras at dapibus
-                ligula. Nam velit elit, mattis in euismod et, laoreet maximus
-                dolor.
+                Wether you have a question about our organization, advocacy
+                work, event or anything else, our team is ready to connect you
+                with the resources or help you need.
               </p>
               <div className="contact-section-container">
                 <div className="contact-section">

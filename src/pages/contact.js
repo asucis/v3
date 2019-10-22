@@ -22,7 +22,7 @@ class Contact extends Component {
         <div className="contact-container">
           <div className="contact-information-container">
             <div className="contact-information">
-              <h1>Need a hand? We&apos;re here to help</h1>
+              <h1>We&apos;d love to hear from you</h1>
               <p>
                 Wether you have a question about our organization, advocacy
                 work, event or anything else, our team is ready to connect you
